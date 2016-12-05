@@ -1,0 +1,9 @@
+= link_to 'Logout', destroy_user_session_path, method: :delete, class: "pull-right btn btn-primary btn-xs"
+.logo
+  Simple TODO List
+  .small from Ruby Garage
+
+= react_component 'ProjectRoot', { projects: @projects }#, {prerender: true}
+
+~#:javascript
+~#  window.INITSTATE = JSON.parse('#{@init_data}')

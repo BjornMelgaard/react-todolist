@@ -1,0 +1,17 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title ReactTodolist
+    = csrf_meta_tags
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    = render "shared/js_config"
+    .container
+      .row
+        .col-md-8.col-md-offset-2
+          = flash_messages
+      .row
+        .col-md-8.col-md-offset-2
+          = yield

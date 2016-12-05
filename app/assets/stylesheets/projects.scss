@@ -1,0 +1,60 @@
+.project {
+  margin: 0 0 20px;
+
+  .project-header {
+    border: 1px solid #315589;
+    background: asset-url(bg-project-header);
+    display: flex;
+    align-items: center;
+
+    .project-field {
+      flex-grow: 1;
+      padding-left: 47px;
+      background: transparent asset-url(icon-project) no-repeat 15px 50%;
+    }
+    
+    input, h2 {
+      width: 100%;
+      color: #fff;
+      font-size: 22px;
+      font-weight: normal;
+      line-height: 38px;
+      text-shadow: 1px 1px 0 #111;
+      height: 40px;
+      margin: 5px 0;
+      padding: 0 5px;
+      border: 1px solid transparent;
+    }
+
+    h2 {
+      cursor: default;
+    }
+
+    input {
+      background: #4e7fbc;
+      border: 1px solid #315589;
+      border-radius: 3px;
+      
+      &:focus {
+        outline: none
+      }
+    }
+    
+    .control {
+      margin: 0 7px;
+
+      li {
+        border-left: 1px solid #5284bf;
+      }
+      
+      .edit {
+        background: asset-url('icon-project-edit') no-repeat 50% 50%;
+      }
+
+      .delete {
+        background: asset-url('icon-project-delete') no-repeat 50% 50%;
+      }
+    }
+
+  }
+}

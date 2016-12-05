@@ -1,0 +1,15 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
+@import "devise_bootstrap_views";
+@import "react-datepicker";
+@import "react-redux-toastr";
+
+@import "main";
+@import "control";
+@import "projects";
+@import "tasks";
+@import "comments";
+
+.react-datepicker {
+  font-size: 1rem;
+}

@@ -1,0 +1,12 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html;charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:content => "IE=edge", "http-equiv" => "X-UA-Compatible"}/
+    %title Jasmine Specs
+    = stylesheet_link_tag *jasmine_css_files
+    = javascript_include_tag *jasmine_js_files, :defer => "defer"
+  %body{"data-no-turbolink" => ""}
+    = render "shared/js_config"
+    #jasmine_content
+    = yield
