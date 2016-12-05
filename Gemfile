@@ -26,9 +26,10 @@ gem 'acts_as_list'
 gem 'carrierwave'
 gem 'mini_magick'
 
+gem 'listen', '~> 3.0.5'
+
 group :development do
   gem 'web-console'
-  gem 'listen', '~> 3.0.5'
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
 
