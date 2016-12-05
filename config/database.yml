@@ -18,9 +18,9 @@ heroku: &heroku
   adapter: postgresql
   encoding: unicode
   timeout: 5000
-  database: d3vvl7fh60pevl
-  username: kahdkjkewuuife
-  password: TZF0CmZD-s-iL2DkBaNFF6hFrG
+  database: d8bp4fcag5225c
+  username: cskhfstvcweivs
+  password: 3USJXRHUWwU8Pcjqdz6vYIypMf
   port:     5432
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
