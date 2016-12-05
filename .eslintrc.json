@@ -1,0 +1,54 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true
+  },
+  "extends": "airbnb",
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true,
+      "jsx": true
+    },
+    "sourceType": "module"
+  },
+  "plugins": [
+    "react"
+  ],
+  "globals": {
+    "afterEach": true,
+    "beforeEach": true,
+    "describe": true,
+    "expect": true,
+    "it": true,
+    "jasmine": true,
+    "pending": true,
+    "spyOn": true,
+    "waits": true,
+    "waitsFor": true,
+    "xdescribe": true,
+    "xit": true,
+    "beforeAll": true,
+    "afterAll": true,
+    "runs": true
+  },
+  "rules": {
+    "strict": 0,
+    "indent": [ "error", 2 ],
+    "linebreak-style": [ "error", "unix" ],
+    "quotes": [ "error", "double" ],
+    "semi":   [ "error", "never" ],
+    "no-multi-spaces": [ "error", {
+      "exceptions": {
+        "VariableDeclarator": true,
+        "ImportDeclaration":  true
+      }
+     } ],
+    "key-spacing": [ "error", {
+      "align": "value"
+    } ],
+    "import/no-unresolved": [2, { "ignore": ["^[#]"] }]
+  }
+}
+
