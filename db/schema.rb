@@ -10,23 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161030135045) do
-
-  create_table "attachments", force: :cascade do |t|
-    t.string   "file"
-    t.integer  "comment_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["comment_id"], name: "index_attachments_on_comment_id"
-  end
-
-  create_table "comments", force: :cascade do |t|
-    t.text     "text"
-    t.integer  "task_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["task_id"], name: "index_comments_on_task_id"
-  end
+ActiveRecord::Schema.define(version: 20161028160909) do
 
   create_table "projects", force: :cascade do |t|
     t.string   "name"
@@ -34,17 +18,6 @@ ActiveRecord::Schema.define(version: 20161030135045) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_projects_on_user_id"
-  end
-
-  create_table "tasks", force: :cascade do |t|
-    t.boolean  "done"
-    t.string   "name"
-    t.integer  "project_id"
-    t.datetime "deadline"
-    t.integer  "position"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["project_id"], name: "index_tasks_on_project_id"
   end
 
   create_table "users", force: :cascade do |t|
