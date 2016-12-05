@@ -41,7 +41,6 @@ end
 
 group :development, :test do
   gem 'byebug', platform: :mri
-  gem 'sqlite3'
 
   # RSpec
   gem 'rspec-rails', '~> 3.5'
