@@ -22,4 +22,8 @@ module ApplicationHelper
     end
     html_all.html_safe
   end
+
+  def user_omniauth_authorize_path(provider)
+    send "user_#{provider}_omniauth_authorize_path"
+  end
 end

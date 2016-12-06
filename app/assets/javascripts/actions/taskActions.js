@@ -71,7 +71,7 @@ export const saveEdited = newName => (dispatch, getState) => {
         }, handleError)
 }
 
-export const setDeadline = (task, deadline) => dispatch => {
+export const setDeadline = (task, deadline) => (dispatch) => {
   if (deadline !== null && !window.moment.isMoment(deadline)) {
     throw { message: "Deadline is not valid (must be moment object or null)", deadline }
   }
