@@ -15,14 +15,14 @@ test:
   database: db/test.sqlite3
 
 heroku: &heroku
-  adapter: postgresql
+  adapter:  postgresql
   encoding: unicode
-  timeout: 5000
-  database: d8bp4fcag5225c
-  username: cskhfstvcweivs
-  password: 3USJXRHUWwU8Pcjqdz6vYIypMf
+  timeout:  5000
+  database: dcbr2p4ru9fbmb
+  username: guwbmrzkjjckla
+  password: f7fb8a7cd29be96462bc7ebbe0fa548a595b88741f830865ed0eb19696445bde
   port:     5432
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  pool:     <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
 
 production:
   <<: *heroku

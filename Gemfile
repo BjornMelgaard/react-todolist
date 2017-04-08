@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.3.1'
+ruby '2.4.0'
 
 gem 'rails', '~> 5.0.0', '>= 5.0.0.1'
 gem 'pg'
@@ -42,6 +42,7 @@ end
 group :development, :test do
   gem 'byebug', platform: :mri
   gem 'sqlite3'
+  gem 'dotenv-rails'
 
   # RSpec
   gem 'rspec-rails', '~> 3.5'
@@ -51,6 +52,11 @@ group :development, :test do
   gem 'faker'
   gem 'database_cleaner'
   gem 'fuubar', require: false
+
+  gem 'poltergeist'
+  gem 'selenium-webdriver'
+  gem 'chromedriver-helper'
+  gem 'capybara-screenshot'
 
   # Js
   gem 'jasmine-rails'
