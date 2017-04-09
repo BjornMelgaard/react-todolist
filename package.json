@@ -3,9 +3,6 @@
   "version": "1.0.0",
   "description": "== README",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "engines": {
     "node": "7.2.0",
     "npm": "3.10.8"
