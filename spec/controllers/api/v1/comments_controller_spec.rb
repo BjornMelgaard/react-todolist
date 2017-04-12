@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe CommentsController, type: :controller do
+RSpec.describe Api::V1::CommentsController, type: :controller do
   sign_in_user
 
   it 'should have a current_user' do
@@ -13,17 +13,17 @@ RSpec.describe CommentsController, type: :controller do
   describe 'POST #create' do
     context 'with valid attributes' do
       it 'adds a comment' do
-        expect {
+        expect do
           post :create, params: { comment: attributes_for(:comment, task_id: task.id) }
-        }.to change(Comment, :count).by(1)
+        end.to change(Comment, :count).by(1)
       end
     end
 
     context 'with invalid attributes' do
       it 'does not create a comment' do
-        expect {
+        expect do
           post :create, params: { comment: attributes_for(:invalid_comment) }
-        }.to_not change(Comment, :count)
+        end.to_not change(Comment, :count)
       end
 
       it 'returns an error' do
@@ -37,9 +37,20 @@ RSpec.describe CommentsController, type: :controller do
     let!(:comment) { create(:comment, task_id: task.id) }
 
     it 'deletes a comment' do
-      expect {
+      expect do
         delete :destroy, params: { id: comment }
-      }.to change(Comment, :count).by(-1)
+      end.to change(Comment, :count).by(-1)
+    end
+
+    it 'comment dont exists' do
+      delete :destroy, params: { id: 1001 }
+      expect(response).to have_http_status(:not_found)
+    end
+
+    it 'not owner' do
+      comment = create :comment
+      delete :destroy, params: { id: comment.id }
+      expect(response).to have_http_status(:unauthorized)
     end
   end
 end

@@ -1,10 +1,9 @@
 FactoryGirl.define do
-  FactoryGirl.define do
-    factory :comment do
-      text { Faker::Lorem.paragraph }
-    end
+  factory :comment do
+    task
+    text { Faker::Lorem.paragraph }
 
-    factory :invalid_comment, class: 'Comment' do
+    factory :invalid_comment do
       text nil
     end
   end

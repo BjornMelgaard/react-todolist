@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe AttachmentsController, type: :controller do
+RSpec.describe Api::V1::AttachmentsController, type: :controller do
   sign_in_user
 
   describe 'POST #create' do

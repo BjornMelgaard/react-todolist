@@ -1,6 +1,7 @@
 class Task < ApplicationRecord
   belongs_to :project
-  has_many :comments, -> { order(created_at: :asc) }, dependent: :destroy
+  has_many   :comments, -> { order(created_at: :asc) }, dependent: :destroy
+  has_one    :user, through: :project
 
   acts_as_list scope: :project
 

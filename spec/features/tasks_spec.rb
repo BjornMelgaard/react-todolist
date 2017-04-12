@@ -9,8 +9,8 @@ feature 'Tasks' do
 
     find(:css, '.create-task-in input').set(task_params[:name])
     find_button('Add task').click
-    sleep 0.1
 
+    expect(page).to have_css('.task-item', count: 1)
     expect(Task.count).to eq(1)
   end
 
@@ -21,16 +21,16 @@ feature 'Tasks' do
 
     find(:css, '.task-control button.edit').click
     find(:css, '.task-name textarea.task-name-field').set(new_name + "\n")
-    wait_for_ajax
+    expect(page).to have_content(new_name)
     expect(task.reload.name).to eq new_name
   end
 
   scenario 'can delete task' do
-    task = create(:task, project: project)
+    create(:task, project: project)
     visit root_path
     expect do
       find(:css, '.task-control button.delete').click
-      wait_for_ajax
+      expect(page).not_to have_css('.task-item')
     end.to change(Task, :count).by(-1)
   end
 end

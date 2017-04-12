@@ -21,6 +21,7 @@ gem 'omniauth-facebook'
 gem 'devise-bootstrap-views'
 gem 'active_model_serializers', '~> 0.10.0'
 gem 'acts_as_list'
+gem 'cancancan'
 
 # File uploader
 gem 'carrierwave'

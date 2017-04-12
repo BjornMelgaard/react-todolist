@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe TasksController, type: :controller do
+RSpec.describe Api::V1::TasksController, type: :controller do
   sign_in_user
 
   it 'should have a current_user' do

@@ -21,16 +21,16 @@ feature 'Projects' do
     visit root_path
     find('button.edit').click
     find(:css, '.project-field input').set(new_name + "\n")
-    wait_for_ajax
+    expect(page).to have_content(new_name)
     expect(project.reload.name).to eq new_name
   end
 
   scenario 'can delete project' do
-    project = create(:project, user: user)
+    create(:project, user: user)
     visit root_path
     expect do
       find('button.delete').click
-      wait_for_ajax
+      expect(page).not_to have_css('.project')
     end.to change(Project, :count).by(-1)
   end
 end

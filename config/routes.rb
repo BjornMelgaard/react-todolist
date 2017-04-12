@@ -7,15 +7,19 @@ Rails.application.routes.draw do
     omniauth_callbacks: 'users/omniauth_callbacks'
   }
 
-  resources :projects
+  namespace :api, defaults: { format: :json } do
+    namespace :v1 do
+      resources :projects
 
-  resources :tasks, defaults: { format: :json } do
-    put :done,     on: :member
-    put :sort,     on: :member
-    put :deadline, on: :member
+      resources :tasks do
+        put :done,     on: :member
+        put :sort,     on: :member
+        put :deadline, on: :member
+      end
+
+      resources :comments, only: [:create, :destroy]
+
+      resources :attachments, only: [:create]
+    end
   end
-
-  resources :comments, defaults: { format: :json }, only: [:create, :destroy]
-
-  resources :attachments, only: [:create]
 end
